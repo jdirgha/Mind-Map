@@ -108,9 +108,15 @@ const getServerUrl = () => {
 
 ## Step 4: Test Your Deployment
 
-### Backend Health Check
-Visit: `https://your-render-app.onrender.com/health`
-Should return: `{"status":"OK","timestamp":"..."}`
+### Backend Testing
+1. **Root URL**: Visit `https://your-render-app.onrender.com/`
+   - Should show: Welcome message with server info
+   
+2. **Health Check**: Visit `https://your-render-app.onrender.com/health`
+   - Should return: `{"status":"OK","timestamp":"..."}`
+
+3. **API Info**: Visit `https://your-render-app.onrender.com/api`
+   - Should show: Server details and status
 
 ### Frontend Test
 1. Visit your Netlify URL

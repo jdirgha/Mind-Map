@@ -35,6 +35,23 @@ const io = socketIo(server, {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+// Root endpoint - Welcome message
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Welcome to Mind Map Game Server! 🎮',
+    name: 'Mind Map Game Server',
+    version: '1.0.0',
+    status: 'running',
+    environment: process.env.NODE_ENV || 'development',
+    endpoints: {
+      health: '/health',
+      api: '/api'
+    },
+    websocket: 'Socket.IO connection available',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Health check endpoint for deployment platforms
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
