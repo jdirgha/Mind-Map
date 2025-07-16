@@ -1,5 +1,4 @@
 import { io } from 'socket.io-client';
-import { EventEmitter } from 'events';
 
 // Get server URL from environment variables
 const getServerUrl = () => {
@@ -13,12 +12,38 @@ const getServerUrl = () => {
          'http://localhost:3001';
 };
 
-class SocketService extends EventEmitter {
+class SocketService {
   constructor() {
-    super();
     this.socket = null;
     this.serverUrl = getServerUrl();
+    this.eventListeners = new Map();
     console.log('🌐 Socket service initialized with server URL:', this.serverUrl);
+  }
+
+  // Simple event emitter methods
+  on(event, callback) {
+    if (!this.eventListeners.has(event)) {
+      this.eventListeners.set(event, []);
+    }
+    this.eventListeners.get(event).push(callback);
+  }
+
+  emit(event, ...args) {
+    if (this.eventListeners.has(event)) {
+      this.eventListeners.get(event).forEach(callback => {
+        callback(...args);
+      });
+    }
+  }
+
+  off(event, callback) {
+    if (this.eventListeners.has(event)) {
+      const listeners = this.eventListeners.get(event);
+      const index = listeners.indexOf(callback);
+      if (index > -1) {
+        listeners.splice(index, 1);
+      }
+    }
   }
 
   connect() {
