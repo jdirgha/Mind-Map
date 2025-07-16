@@ -1,7 +1,7 @@
 [build]
   base = "client"
-  publish = "client/dist"
-  command = "npm run build"
+  publish = "dist"
+  command = "npm ci && npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -13,6 +13,7 @@
 
 [context.production.environment]
   NODE_ENV = "production"
+  VITE_SERVER_URL = "https://mind-map-xoy6.onrender.com"
 
 [context.deploy-preview.environment]
   NODE_ENV = "production"
