@@ -1,10 +1,10 @@
 [build]
   base = "client"
   publish = "dist"
-  command = "npm install && npx vite build"
+  command = "npm install --include=dev && npm run build"
 
 [build.environment]
-  NODE_VERSION = "18.16.1"
+  NODE_VERSION = "20.19.0"
 
 [[redirects]]
   from = "/*"
