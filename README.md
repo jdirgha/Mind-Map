@@ -1,4 +1,4 @@
-# 🎮 Mind Map - Multiplayer Game
+# Mind Map - Multiplayer Game
 
 A fun multiplayer word game where players submit words related to a theme, and one "mindless" player tries to blend in without knowing the theme!
 
@@ -46,7 +46,7 @@ Visit `http://localhost:5173` to play!
 
 ## 🌐 Deploy to Production
 
-Ready to share your game with the world? Follow our comprehensive deployment guide:
+Ready to share your game with the world? Follow comprehensive deployment guide:
 
 **👉 [DEPLOYMENT.md](DEPLOYMENT.md)**
 
@@ -76,7 +76,7 @@ mind-map-game/
 └── DEPLOYMENT.md          # Deployment guide
 ```
 
-## 🎮 Game Features
+## Game Features
 
 - **Real-time Multiplayer**: Socket.IO for instant updates
 - **Responsive Design**: Play on desktop or mobile
@@ -99,7 +99,7 @@ mind-map-game/
 - Socket.IO
 - In-memory storage (easily upgradeable to MongoDB)
 
-## 📝 Environment Variables
+## Environment Variables
 
 ### Backend (`server/.env`)
 ```
@@ -155,6 +155,3 @@ Whether you're running locally or deploying to production, your Mind Map game is
 **Local**: http://localhost:5173
 **Deployed**: Follow [DEPLOYMENT.md](DEPLOYMENT.md) to get your live URL
 
----
-
-Made with ❤️ for multiplayer gaming fun! 
